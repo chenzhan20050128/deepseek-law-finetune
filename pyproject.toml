@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ds-finetune"
+version = "0.1.0"
+description = "LoRA finetuning pipeline for DeepSeek distilled models on the ModelScope law dataset"
+readme = "README.md"
+authors = [{ name = "DeepSeek Finetune Maintainers" }]
+requires-python = ">=3.12"
+dependencies = [
+    "torch==2.8.0",
+    "xformers>=0.0.27",
+    "transformers>=4.44.0",
+    "trl>=0.9.6",
+    "unsloth>=2024.4.25",
+    "accelerate>=0.30.0",
+    "bitsandbytes>=0.43.0",
+    "modelscope>=1.15.0",
+    "sentence-transformers>=3.2.0",
+    "sentencepiece>=0.1.99",
+    "addict>=2.4.0",
+    "datasets>=4.3.0,<4.4.0",
+    "pandas>=2.2.0",
+    "numpy>=1.26.0",
+    "scikit-learn>=1.5.0",
+    "pyarrow>=15.0.0",
+    "safetensors>=0.4.3",
+    "huggingface-hub>=0.23.0",
+    "wandb>=0.16.4",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
